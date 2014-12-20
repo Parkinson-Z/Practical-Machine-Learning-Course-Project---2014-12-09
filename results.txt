@@ -16,25 +16,3 @@
 20 kknn
 12 multinom
 19 gcvEarth
-
-
-
-llfun <- function(actual, prediction) 
-{
-  epsilon <- .000000000000001
-  yhat <- pmin(pmax(prediction, epsilon), 1-epsilon)
-  logloss <- -mean( actual*log(yhat) + (1-actual)*log(1 - yhat))
-  return(logloss)
-}
-#16.14329 % click rate
-
-#ss <- read.table("sampleSubmission",header=T,stringsAsFactor=F,sep=",")
-
-ss <- read.csv("sampleSubmission",stringsAsFactor=F,colClasses=c("character","numeric"))
-
-write.table(ss, "zero.csv", sep=",", row.names=FALSE,quote=F)
-
-  myfile <- file("test")
-  ff <- list(header = TRUE,sep = ";",eol = '\r\n')
-  tb <- sqldf('select * from myfile', file.format = ff)
-  sqldf()	## close connection 
