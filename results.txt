@@ -1,0 +1,40 @@
+20 random_forest
+20 gbm
+20 knn
+20 C50
+9 nnet
+7 elm
+14 lda2
+11 sda
+8 rpart
+20 treebag
+13 pls
+12 bayesglm
+19 ctree
+7 rbf
+14 lvq
+20 kknn
+12 multinom
+19 gcvEarth
+
+
+
+llfun <- function(actual, prediction) 
+{
+  epsilon <- .000000000000001
+  yhat <- pmin(pmax(prediction, epsilon), 1-epsilon)
+  logloss <- -mean( actual*log(yhat) + (1-actual)*log(1 - yhat))
+  return(logloss)
+}
+#16.14329 % click rate
+
+#ss <- read.table("sampleSubmission",header=T,stringsAsFactor=F,sep=",")
+
+ss <- read.csv("sampleSubmission",stringsAsFactor=F,colClasses=c("character","numeric"))
+
+write.table(ss, "zero.csv", sep=",", row.names=FALSE,quote=F)
+
+  myfile <- file("test")
+  ff <- list(header = TRUE,sep = ";",eol = '\r\n')
+  tb <- sqldf('select * from myfile', file.format = ff)
+  sqldf()	## close connection 
