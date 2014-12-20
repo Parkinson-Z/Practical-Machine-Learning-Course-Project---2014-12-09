@@ -43,7 +43,7 @@ img <- readPNG("knn.png")
 grid::grid.raster(img)
 ```  
 
-![result.txt](result.txt)
+![result.txt](results.txt)
  
 ##The following lists are some classification results on the dataset
 ```{r}
