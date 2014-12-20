@@ -19,8 +19,7 @@ easily simulate the mistakes in a safe and controlled manner by using a relative
 Read more: http://groupware.les.inf.puc-rio.br/har
 
 
-##The following plots are random forest, gbm and knn fitted accuracies from training dataset with 5 folds
-##cross validations.
+##The following plots are random forest, gbm and knn fitted accuracies from training dataset with 5 folds cross validations.
 ```{r 1,fig.width=4,fig.height=3,message=FALSE}
 library(png)
 img <- readPNG("random-forest.png")
